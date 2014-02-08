@@ -1224,188 +1224,217 @@ end
 
 seklinde olacaktır.
 
-####unless
+#### unless
 Unless, kosulun false oldugu durumlarda çalıstırılır.
 
-	 ``` 
-	unless kosul
-		yapılacaklar
-	end    
-     ```
+``` 
+unless kosul
+yapılacaklar
+end    
+```
 
 **Unless** ile else kullanmak pek akıllıca değildir, bunu nededi aslında "unless = !if "olmasıdır. unless ile else kullanmak gerekiyorsa onun yerine if-else kullanılması gerekmektedir.
 
-####Üçlü Operatör(?, : ) 	 ``` 
+#### Üçlü Operatör(?, : ) 	 
+
+``` 
 kosul ? kosul_true_ise_yapılacak : kosul_false_ise_yapılacak
-     ```
+```
+
 seklindedir.
 
 Yukarda anlatılanları kod dizininde görecek olusak : 
 
-	 ``` 
-	gun ='pazartesi'
-	puts (gun == 'pazartesi' ? "Sendrom" : "Yupppi :)")
-	end    
-	#Sendrom
-     ```
+``` 
+gun ='pazartesi'
+puts (gun == 'pazartesi' ? "Sendrom" : "Yupppi :)")
+end    
+#Sendrom
+```
     
 
 ifadesinde *gun* degiskeninin degeri pazartesi oldugunda kontrol yapısına girdiginde degeri *true* olacağından cıktıyı *Sendrom* olarak verecektir.
 
-####case-when
+#### case-when
 
 - Çok sayıda dallanma kontrolu gerekliyse kullanılacaktır.
 
-	 ``` 
-	degisken = 12,5
-	puts case degisken
-	when String then "Bu bir metin"
-	when Integer then "Bu bir tamsayı"
-	when Float then  "Bu bir ondalık sayi"  
-     ```
-     seklinde olacaktır, veya yukarıdaki ifade yerine 	 ``` 
-	String === degisken 
-     ``` kullanıldığında 	 ``` 
-	true   
-     ``` 
+``` 
+degisken = 12,5
+puts case degisken
+when String then "Bu bir metin"
+when Integer then "Bu bir tamsayı"
+when Float then  "Bu bir ondalık sayi"  
+```
+     seklinde olacaktır, veya yukarıdaki ifade yerine 	
+``` 
+String === degisken 
+``` 
+     
+     kullanıldığında 	 
+     
+``` 
+true   
+``` 
      degerini döndürür. Bunun nedeni 
-     	 ``` 
-	=== 
-     ``` ifadesinin 	 ``` 
-	.include?    
-     ```ifadesine eşdeğer olmasıdır.
+``` 
+=== 
+``` 
+ifadesinin
+
+``` 
+.include?    
+```
+ifadesine eşdeğer olmasıdır.
      
 
-##Enumerable Modülu
+## Enumerable Modülu
 
 - Enumerable modülu klasik döngülerin yerine kullanacağımız metodlerı barındırır.
 
-	 ``` 
-	(1..10).each do |sayi|
-		print sayi
-		end 
-		# 1 2 3 4 5 6 7 8 9 10
-     ```
+``` 
+(1..10).each do |sayi|
+print sayi
+end 
+# 1 2 3 4 5 6 7 8 9 10
+```
      ifadesinde 1den 10'a kadar her sayiyi ekrana yazdırmayı sağlar.
      
-- **all?** metodu verilen komutu içermesi gerekir. yani
+> **all?** metodu verilen komutu içermesi gerekir. yani
 
-	 ``` 
-	d=[13,35,65]
-	d.all?{|x| x>20}    #false
-     ```
-     	yukarıda ki *all?* metodunda tum *d* degerlerinin 20 den buyuk olması gereklidir, ama yukardaki ifade bu kurala uymadığı için *false* döndürecektir. Ama yukardaki ifade yerine
-     		 ``` 
-	d=[13,35,65]
-	d.all?{|x| x>10}    #true
-     ```
-     ifadesi olursa bu sefer tum degerler 10 'dan buyuk olacağından *true* döndürecektir.
+``` 
+d=[13,35,65]
+d.all?{|x| x>20}    #false
+```
+
+```
+B.instance_methods.size 	#56
+Object.instance_methods.size 		#54	      
+```
+yukarıda ki *all?* metodunda tum *d* degerlerinin 20 den buyuk olması gereklidir, ama yukardaki ifade bu kurala uymadığı için *false* döndürecektir. Ama yukardaki ifade yerine
+
+``` 
+d=[13,35,65]
+d.all?{|x| x>10}    #true
+```
+
+ifadesi olursa bu sefer tum degerler 10 'dan buyuk olacağından *true* döndürecektir.
      
-- **any?** metodunda ise birinin verilen kurala uyması yeterlidir.
+> **any?** metodunda ise birinin verilen kurala uyması yeterlidir.
 
 
  
- ``` 
-	d=[13,35,65]
-	d.any?{|x| x>20}    #true
-     ```
-     ifadesi **all?** farklı olarak *true* degerini döndürecektir.
+``` 
+d=[13,35,65]
+d.any?{|x| x>20}    #true
+```
+ifadesi **all?** farklı olarak *true* degerini döndürecektir.
      
-- **select** metodu seçimi sağlıyor.
+> **select** metodu seçimi sağlıyor.
 
-	 ``` 
-	d.select{|x| x>50}    #65   
-     ```
-     	x'in 50'den buyuk olan degerlerini yazdırır.
+``` 
+d.select{|x| x>50}    #65   
+```
+x'in 50'den buyuk olan degerlerini yazdırır.
      	
-- **collect** metodu ifade içerisinde dogru degerlere *true* yanlıs degerler *false*	 ``` 
-	d=[13,35,65]
-	d.collect{|x| x>50}     #[false,false,true]
-     ```olacaktır.
+> **collect** metodu ifade içerisinde dogru degerlere *true* yanlıs degerler *false*	 
+
+``` 
+d=[13,35,65]
+d.collect{|x| x>50}     #[false,false,true]
+```
+olacaktır.
      
-- **find** metodu bulma işleminin yapılmasını sağlıyor.
+> **find** metodu bulma işleminin yapılmasını sağlıyor.
 
-	 ``` 
-	d.find{|x| x>50}  #65    
-     ``` ifadesi 50'den buyuk ilk elemanı geri döndürüyor.
+``` 
+d.find{|x| x>50}  #65    
+``` 
+     
+ifadesi 50'den buyuk ilk elemanı geri döndürüyor.
 
      
--**find all** metodu *find* metodundan farklı olarak verilen kosula uyan tum degerleri geri donduruyor.
+> **find all** metodu *find* metodundan farklı olarak verilen kosula uyan tum degerleri geri donduruyor.
 
-	 ```
-	 d=[13,35,65,85]
-	 d.find all{|x| x>50}    #[]65, 85]   
-     ```
+```
+d=[13,35,65,85]
+d.find all{|x| x>50}    #[]65, 85]   
+```
 olacaktır.
 
--**reduce** metodu ise
+> **reduce** metodu ise
    
-	 ```
-	 d=[13,35,65,85]
-	 d.reduce{|sum,x| sum +=x} 
-	#198	 
-     ```
+```
+d=[13,35,65,85]
+d.reduce{|sum,x| sum +=x} 
+#198	 
+```
 
 ifadesinde her x elemanını *sum*'a ekleyip en son *sum* ifadesini döndürüyor.
 
-	 ```
-	 d.reduce(10){|sum, x| sum *= x}    #25138750
-     ```
+```
+d.reduce(10){|sum, x| sum *= x}    #25138750
+```
 ifadesi çarpma işlemini yapacaktır.
 
 
 **Class Çagırma**
 
-	 ```
-	 class Ogrenci
-	def sayi
-	end 
-	end
-	a=Ogrenci.new("ali","veli")	
-	a.sayi 	#class içindeki metoda ulaşmayı sağlar. 
-     ```
+```
+class Ogrenci
+def sayi
+end 
+end
+a=Ogrenci.new("ali","veli")	
+a.sayi 	#class içindeki metoda ulaşmayı sağlar. 
+```
 
-- ```
-	Ogrenci.ancestors 
-	#Class'ın soyağacını göstermeye çalışır. 
-     ```
+```
+Ogrenci.ancestors 
+#Class'ın soyağacını göstermeye çalışır. 
+```
      
-	 ```
-	 p a 	#Adres ve bilgileri verir.
-	 puts a 	#Sadece Adresi verir.
-	      ```
+```
+p a 	#Adres ve bilgileri verir.
+puts a 	#Sadece Adresi verir.
+```
 	      
 - Bir üst sınıfı görmek için **super** komutunu kullanabiliriz.
 
-- Sınıflarda **kalıtım**  ```
-				<
-	      ```işareti ile yapılabilir.
+- Sınıflarda **kalıtım**  
+
+```
+<
+```
+işareti ile yapılabilir.
 	      
- ```
-	 class A
-	 	end
-	 class B < A
-	 	end	      ``` ifadesinde B'nin A'dan türediğini görmekteyiz. Ayrıca
-	 	 ```B.instance_methods.size 	#56
-	 	 Object.instance_methods.size 		#54	      
-	 	 ```
+```
+class A
+end
+class B < A
+end	      
+``` 
+
+ifadesinde B'nin A'dan türediğini görmekteyiz. Ayrıca
+
+
 	 	 
 olur.Aslında B objenin instance methodlarından türemiş diyebiliriz.
 
 ```
-	class Dikdörtgen
-		def initialize(uzunluk,yukseklik)
-			@uzunluk,@yukseklik=uzunluk,yukseklik
-		end
-		def cevre() 2*(@uzunluk+@yukseklik)end
-		end
-	class Kare < Dikdörtgen
-		def initialize(uzunluk)
-			@uzunluk =(@uzunluk)*(@uzunluk)
-		end
-	end
+class Dikdörtgen
+ def initialize(uzunluk,yukseklik)
+  @uzunluk,@yukseklik=uzunluk,yukseklik
+end
+ def cevre() 2*(@uzunluk+@yukseklik)end
+end
+class Kare < Dikdörtgen
+ def initialize(uzunluk)
+  @uzunluk =(@uzunluk)*(@uzunluk)
+end
+end
 ```
-ifadeisnde Dikdörtgen classından türetilen Kare sınıfı ve hesaplanan dikdörtgen cevresi ve kare alanıdır.
+ifadesinde Dikdörtgen classından türetilen Kare sınıfı ve hesaplanan dikdörtgen cevresi ve kare alanıdır.
 
 
 
