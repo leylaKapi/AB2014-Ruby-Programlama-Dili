@@ -2,6 +2,7 @@
 - [Ruby-lang](https://ruby-lang.org)
 - [Nitrous](https://nitrous.io)
 
+*Bu Notlar Akademik Bilişim eğitimlerinden* **Sıtkı Bagdat** *hocamızın notlarından düzenlenmiştir.* 
 ##Ruby bir programlama dilidir.
 
 - Ruby, okunabilirliği yüksek bir dildir.
@@ -845,8 +846,8 @@ Diziler, array sınıfı kullanılarak üretilir.
    kullanılarak birleştirilebilir.
    
 ``` 
-	dizi.flatten 	#[1,2,3,4,5,6]   #hepsini aynı hizada olusmasını saglar. 
- ```
+dizi.flatten 	#[1,2,3,4,5,6]   #hepsini aynı hizada 	olusmasını saglar. 
+``` 
  
 - Array sınıfının objelerini görmek için ``` 
 	Array.ancestors  
@@ -913,19 +914,15 @@ Diziler, array sınıfı kullanılarak üretilir.
 	dizi.shift 		#bastan cıkarma 
  ```
  komutlardır.
- 
-``` 
+      ``` 
 	renkler = %w/mavi, acık\mavi, sarı, acık\sarı 
 	renkler[1] 			#acık mavi
- ```
- 
- 
-
+       ```
+ ***
 	 ``` 
 	gunler = ["pzt","salı","çar","per", "cum","cumr","pazr"]
 	veya
-	gunler = %w("pzt", "sal", "çar", "per", "cum",  "cumr","pzr")
-	     
+	gunler = %w("pzt", "sal", "çar", "per", "cum",  "cumr","pzr")     
     ```
 
 seklindede tanımlanabilir.
@@ -964,10 +961,10 @@ Bu durumda iki farkı yazım türü karsımıza çıkmaktadır.
 
 
 
-```	
-#Ruby 1.9'dan önce
+```
+	#Ruby 1.9'dan önce
 ogrenci={:ad =>'Ali', :soyad ='Kara'}     
-    ```
+ ```
 yerine
 	
 	 ``` 
@@ -1231,6 +1228,7 @@ ifadesinde her x elemanını *sum*'a ekleyip en son *sum* ifadesini döndürüyo
      ```
 ifadesi çarpma işlemini yapacaktır.
 
+
 **Class Çagırma**
 
 	 ```
@@ -1238,10 +1236,34 @@ ifadesi çarpma işlemini yapacaktır.
 	def sayi
 	end 
 	end
-	a=Ogrenci.new("ali","veli")	 
+	a=Ogrenci.new("ali","veli")	
+	a.sayi 	#class içindeki metoda ulaşmayı sağlar. 
      ```
 
+- ```
+	Ogrenci.ancestors 
+	#Class'ın soyağacını göstermeye çalışır. 
+     ```
+     
+	 ```
+	 p a 	#Adres ve bilgileri verir.
+	 puts a 	#Sadece Adresi verir.
+	      ```
+	      
+- Bir üst sınıfı görmek için **super** komutunu kullanabiliriz.
 
+- Sınıflarda **kalıtım**  ```
+				<
+	      ```işareti ile yapılabilir.
+	      
+ ```
+	 class A
+	 	end
+	 class B < A
+	 	end	      ``` ifadesinde B'nin A'dan türediğini görmekteyiz. Ayrıca
+	 	 ```B.instance_methods.size 	#56
+	 	 Object.instance_methods.size 		#54	      ```
+olur.Aslında B objenin instance methodlarından türemiş diyebiliriz.
 
 
 
