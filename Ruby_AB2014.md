@@ -1504,16 +1504,75 @@ seklinde olacaktır.
 
 ## Bloklar
 
+- Bloklar isimsiz metodlardır.
+- Metodları tek satırda yazabiliyoruz.
 
+```ruby
+def topla(a,b) a+b end
+topla(3,5)
+```
+> Bloklar nesne değildir, ancak nesne haline **proc** ve **lambda** getirilebilirler.
 
+- Bir blok oluşturmak için kullanabileceğimiz en kolay yöntem lambdadır.
 
+```
+topla = lambda{|a,b| a+b}
+```
+veya
 
+```
+topla = -> a,b {a+b}
+```
+ikiside aynı şekilde yazılabilir.
+> lambda bir nesnedir.
 
+- Bir blok nesnesini çalıştırmak istediğimizde **call** metodunu kullanabiliriz.
 
+```
+topla = lambda{|a,b| a+b}
+topla.call(2,3)
+```
+veya 
 
-   
-   	
-   
+```
+def topla(a,b) a+b end
+topla.to_proc
+```
+**Blogun parametre olarak gönderilmesi**
+
+```ruby
+def hesapla(s1,s2,islem) 
+islem.call(s1,s2)
+end
+toplam=hesapla(3,5,lamba{|a,b| a+b})
+fark=hesapla(3,5,lambda{|a,b| a-b})
+çarpma=hesapla(3,5,lambda{|a,b| a*b})
+```
+seklinde hesaplanabilir.
+
+- Eger lambda kelimesinin kullanmadan çagırmak istersek, metodu lambda kullandığımızdan haberdar etmek için 
+
+aşagıdaki şekilde kullanılmalıdır.
+
+```ruby
+def hesapla(s1,s2,&islem)
+islem.call(s1,s2)
+toplam=hesapla(3,5){|a,b| a+b}
+fark=hesapla(3,5){|a,b| a-b}
+```
+seklinde olmalıdır..
+
+veya 
+
+```
+def hesapla(s1,s2,&islem)
+block_given?islem.call(s1,s2); s1+s2
+topla=hesapla(3,5)
+```
+
+seklindede çagrılabilir.
+
+##### yield
 
 
    
