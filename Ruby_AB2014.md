@@ -356,20 +356,20 @@ seklinde kullanabiliriz.
 
 Tabiki hayır bunu yerine, olusturduğumuz projede *GemFile* içine 
 
-	 ``` 
-      source ('http://ruby-gems.org')
-      gem 'paket_adi'
-    ```
+``` 
+source ('http://ruby-gems.org')
+gem 'paket_adi'
+```
 
 komutları ile dosyanın otomatik olarak otomatik olarak indirilmesini saglıyor.
 
 **Ayrıca** Eger ben ruby dosyası olusturacaksam istedigim dizine gidip asagıdaki kodlar yazıldıgında otomatik olarak istediğim dizinde ruby dosyası olusturmayı saglar.
 
-	 ``` 
-     gem install bundler
-     cd Desktop   		#desktop dizinin içine yuklemek istiyorum
-     bundle gem proje_adi
-    ```
+``` 
+gem install bundler
+cd Desktop   		#desktop dizinin içine yuklemek istiyorum
+bundle gem proje_adi
+```
     
 denilerek Desktop üzerinde bir ruby dosyası olusturbiliriz.
 Ayrıntılı incelemek için [Bundler](http://bundler.io/) inceleyebilirsiniz.
@@ -381,35 +381,35 @@ Dosyayı acıp , yapılacakları yaptıktan sonra  paketi push edip [RubyGems](h
 - *ARGV* is argumentlerin saklandığı sabittir.
 - Dokumantasyon kısmında *ri* komutu kullanılarak yazılmaktadır, genellikle method içinde ararken kullanılır.
 
-	 ``` 
-     ri Class#method
-    ```
+``` 
+ri Class#method
+```
 seklinde diyebiliriz.
 
-#Girdi - Cıktı işlemleri
+# Girdi - Cıktı işlemleri
 
 Çıktı işlemleri asağıdaki komutlar kullanılarak yapılır.
 
-	 ``` 
-      puts  	#satıra \n atarak cıktı almamızı saglar.
-      print 	#satırı olduğu gibi ekrana yazmayı sağlar.
-      p 		#'.inspect' metodu kullanmak gerektiğinde kullanılabilir.
-      printf  #Ekrana direk yazmamızı sağlar.
-    ```
+```ruby 
+puts  	#satıra \n atarak cıktı almamızı saglar.
+print 	#satırı olduğu gibi ekrana yazmayı sağlar.
+p 		#'.inspect' metodu kullanmak gerektiğinde kullanılabilir.
+printf  #Ekrana direk yazmamızı sağlar.
+```
 
 Girdi işlemleri için
 
-	 ``` 
-      gets  	#Direk kullanıcıdan girdi almamızı sağlar.
-    ```
+```ruby 
+gets  	#Direk kullanıcıdan girdi almamızı sağlar.
+```
 
 Yukarıda *p*  'nin kullanımında *.inspect* yerine kullanacak olursak
 
-	 ``` 
-      puts "ruby".inspect 
-	  puts 3.inspect   
-	   
-   ```
+```ruby
+puts "ruby".inspect 
+puts 3.inspect   
+
+```
    
 *.inspect* metodu ile tam saklandığı halini veriyor.Yukarıda çıktı methodlarında "p" ; ".inspect"'in kısa halidir. Bunun anlamı eger ".inspect" metodu kullanacaksam bunun yerine "p" kullanmam yerinde olur.
 
@@ -417,18 +417,18 @@ Yukarıda *p*  'nin kullanımında *.inspect* yerine kullanacak olursak
 - *chom* ise sonda ne varsa onu temizler.
 
 
-	 ``` 
-      				       Basic Object
-      					        ||
-      					      Object
-      					        ||
-      					      Numeric
-      					        ||
-      			Integer		float	Rational	Complex
-      		
-			Fixnum  Bignum			        
+``` 
+      		       Basic Object
+      			        ||
+      			      Object
+      			        ||
+      			      Numeric
+      			        ||
+      	Integer		float	Rational	Complex
+      
+	Fixnum  Bignum			        
 
-    ```
+```
 
 
 Sınıfların gösterimini genel olarak bu şekilde gösterebiliriz.
@@ -436,120 +436,120 @@ Sınıfların gösterimini genel olarak bu şekilde gösterebiliriz.
 - Ruby 2.0 sürümünde rasyonel sayı tanımlamak için 30/2r seklinde tanımlanabilir.
 - Ruby para sistemlerinde **BigDecimal** kütüphanesini kullanmamız gerekmektedir.
 
-	 ``` 
-     1.0e7  		#10.000.000
-     3.methods   	#3 için geçerli metodları getiriyor.
-     __________________
-     require 'yaml'			#yaml dosyası ekleniyor.
-     puts 2.methods.to_yaml   #2'nin dahil oldugu yaml kutuphanesi ile birlikte olan methodları göstermektedir.
-      	
-        ```
+``` 
+1.0e7  		#10.000.000
+3.methods   	#3 için geçerli metodları getiriyor.
+__________________
+require 'yaml'			#yaml dosyası ekleniyor.
+puts 2.methods.to_yaml   #2'nin dahil oldugu yaml kutuphanesi ile birlikte olan methodları göstermektedir.
+
+```
 
 - sayi1 diye bir değiskenimiz olsun ve bu değişkenimizin değeri sayi1 = 1,39 olsun
 
-	 ``` 
-      sayi1.round  	#normal degerini veriyor. => 1
-      sayi1.ceil  		#bir üst sayiya yuvarlıyor.=> 2
-      sayi1.floor 		#bir asagıya yuvarlıyor 	=> 1
-          ```
+``` 
+sayi1.round  	#normal degerini veriyor. => 1
+sayi1.ceil  		#bir üst sayiya yuvarlıyor.=> 2
+sayi1.floor 		#bir asagıya yuvarlıyor 	=> 1
+```
 
 seklinde görmekteyiz.
 
 - **<=>(space ship)** operatörü karşılaştırma operatörüdür.
 
-	 ``` 
-     a <=> b
-     a < b ; -1
-     a > b ; 1
-     a =b ; 0
-     
-    ```
+``` 
+a <=> b
+a < b ; -1
+a > b ; 1
+a =b ; 0
+
+```
 
  
 ifadelerini döndürür.
 
 ***
 
-	 ``` 
-      a = 5 && b = 10
-	a <=> b 			#-1
-    ```
+``` 
+a = 5 && b = 10
+a <=> b 			#-1
+```
 
 
 çıktısı olacaktır.
 
 - Kısaca times ve upto metodlarından bahsedecek olursak
 
-	 ``` 
-      10.times do |i|
-      ...
-      end
-    ```
+``` 
+10.times do |i|
+...
+end
+```
 
 veya
 
-	 ``` 
-      10.times {|i| ...}
-    ```
+``` 
+10.times {|i| ...}
+```
 
 seklinde kullanılabilir. Yukarıdaki işlemde *times* ile bir döngü yazılmıstır.  *times* kelime anlamındanda anlaşılacağı gibi *10 defa yazdır* anlamına gelmektedir.
 	
 
-	 ``` 
-	irb(main):001:0> 10.times do |i|
-	irb(main):002:1* puts "ruby"+i.to_s
-	irb(main):013:1> end
-	ruby0
-	ruby1
-	ruby2
-	ruby3
-	ruby4
-	ruby5
-	ruby6
-	ruby7
-	ruby8
-	ruby9
-	=>10      
-    ```
+``` 
+irb(main):001:0> 10.times do |i|
+irb(main):002:1* puts "ruby"+i.to_s
+irb(main):013:1> end
+ruby0
+ruby1
+ruby2
+ruby3
+ruby4
+ruby5
+ruby6
+ruby7
+ruby8
+ruby9
+=>10      
+```
 
 seklinde çıktısı olur.
  
 - *1.upto(10){...}* ile de 'times' benzer bir kullanım sunar.
 
-	 ``` 
-	irb(main):001:0> 10.upto(10) {puts "ruby"}
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	ruby
-	=>1      
-    ```
+``` 
+irb(main):001:0> 10.upto(10) {puts "ruby"}
+ruby
+ruby
+ruby
+ruby
+ruby
+ruby
+ruby
+ruby
+ruby
+ruby
+=>1      
+```
     	
 veya
 
-	 ``` 
-	irb(main):001:0> 1.upt0(10) do |i|
-	irb(main):002:1* puts "Ruby"+i.to_s
-	irb(main):013:1> end
-	Ruby1
-	Ruby2
-	Ruby3
-	Ruby4
-	Ruby5
-	Ruby6
-	Ruby7
-	Ruby8
-	Ruby9
-	Ruby10
-	=> 1
-	     
-    ```
+``` 
+irb(main):001:0> 1.upt0(10) do |i|
+irb(main):002:1* puts "Ruby"+i.to_s
+irb(main):013:1> end
+Ruby1
+Ruby2
+Ruby3
+Ruby4
+Ruby5
+Ruby6
+Ruby7
+Ruby8
+Ruby9
+Ruby10
+=> 1
+
+```
 
 ##Metinler
 
@@ -557,26 +557,27 @@ veya
 - Metinleri birleştirirken stringleri içine gömerek yapabiliriz.
 
 
-	 ``` 
-	puts "#{'akademik'.capitalize} #{'bilisim'.upcase}"
-		
-	=>	Akademik BILISIM     
-    ```
+``` 
+puts "#{'akademik'.capitalize} #{'bilisim'.upcase}"
+
+=>	Akademik BILISIM     
+```
 
    
 
  seklinde olacaktır.
- -A yrıca metinlerde türkçe karakter desteği için de Unicode-Utils kutuphanesi vardır.Bunu da 
+ -Ayrıca metinlerde türkçe karakter desteği için de Unicode-Utils kutuphanesi vardır.Bunu da 
 
  
- 	 ``` 
- 	 gem install unicode_utils	     
-    ```
+``` 
+gem install unicode_utils	     
+```
 
-seklinde indirip, dosyanın içine 
-	 ``` 
-	 require 'unicode_utils'
-	    ```
+seklinde indirip, dosyanın içine
+
+``` 
+require 'unicode_utils'
+```
 	    seklinde diyebiliriz. Daha sonra
 	    ``` 
 	 UnicodeUtils.upcase("ruby")
