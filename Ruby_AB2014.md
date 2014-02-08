@@ -1618,8 +1618,9 @@ aşagıdaki şekilde kullanılmalıdır.
 
 ```ruby
 def hesapla(s1,s2,&islem)
-islem.call(s1,s2)
-toplam=hesapla(3,5){|a,b| a+b}
+	islem.call(s1,s2)
+	end
+	toplam=hesapla(3,5){|a,b| a+b}
 fark=hesapla(3,5){|a,b| a-b}
 ```
 seklinde olmalıdır..
@@ -1628,7 +1629,7 @@ veya
 
 ```
 def hesapla(s1,s2,&islem)
-block_given?islem.call(s1,s2); s1+s2
+	block_given?islem.call(s1,s2); s1+s2
 topla=hesapla(3,5)
 ```
 
@@ -1640,7 +1641,7 @@ Gönderilen isimsiz bloğu kullanabilmemizi sağlıyor.
 
 ```
 def hesapla(s1,s2)
-block_given? yield(s1,s2); s1+s2
+	block_given? yield(s1,s2); s1+s2
 end
 toplam=hesapla(3,5)
 fark=hesapla(3,5){|a,b| a-b}
@@ -1660,10 +1661,10 @@ fark=hesapla(3,5){|a,b| a-b}
 
 ```ruby
 class Kisi
-attr_accessor ad, soyad
-def isim 
-@ad +" "+@soyad
-end
+	attr_accessor ad, soyad
+	def isim 
+		@ad +" "+@soyad
+	end
 end
 a=Kisi.new
 a.ad = "Ali"
@@ -1673,14 +1674,14 @@ seklinde olur, yukarıda kullanılan **attr_accessor** komutu degiskenlerin enca
 
 ```ruby
 class Kisi
-attr_accessor :ad, :soyad
-def initialize(ad, soyad)
-@ad=ad
-@soyad=soyad
-end
-def isim
-"#{ad} #{soyad}"
-end
+	attr_accessor :ad, :soyad
+	def initialize(ad, soyad)
+		@ad=ad
+		@soyad=soyad
+	end
+	def isim
+		"#{ad} #{soyad}"
+	end
 end
 class Ogrenci < Kisi
 end
@@ -1717,10 +1718,10 @@ yukardaki metod ile encapsulation yapabiliyoruz,yani initialize metodu kullanıl
 
 ```
 class Kisi
-def initialize(ad,soyad)
-@ad=ad
-@soyad=soyad
-end
+	def initialize(ad,soyad)
+		@ad=ad
+		@soyad=soyad
+	end
 end
 kisi=Kisi.new("Ali","Kara")
 ```
@@ -1730,9 +1731,9 @@ veya MultiMatching olarak yazılarakta yapılabilir.
 
 ```ruby
 class Kisi
-def ad
-@ad
-end
+	def ad
+		@ad
+	end
 end
 ```
 seklinde de ulasılabilir.
@@ -1767,8 +1768,8 @@ seklinde olacaktır.
 
 ```
 module Ornek
-def metod
-end
+ def metod
+ end
 end
 Ornek.metod 		#ifadesi seklinde metoda erişemeyiz hata verecektir.
 ```
@@ -1776,8 +1777,8 @@ ama
 
 ```ruby
 module Ornek
-def self.metod
-end
+	def self.metod
+	end
 end
 ```
 seklinde erişilebilir.
@@ -1806,6 +1807,112 @@ seklinde kullanılabilir.
 > Eger soyagacında **Kernel -> Module ** şekilinde bir ifade çıkıyorsa burdan *include* ile eklenmiştir, diyebiliriz, değilse de *extend* ile eklenmiştir, deriz.
 
 
+- Örnek olarak Math dosyasını içindeki Pi sayısına ulaşmak için  **Math::PI** şeklinde kullanabiliriz.
 
 
+```
+module A
+	module B
+		def b_metod
+			puts "b metod"
+		end
+	end
+	module C
+		def public_metod
+			puts "c metod"
+		end
+	end
+end
+class Ornek 
+	include A::B
+end
+o=Ornek.new
+o.b_metod
+```
 
+seklinde ulaşabiliriz.
+
+> Modüller, metodların, sınıfların ve sabitlerin gruplanmasını sağlar. 
+
+```
+module A
+	def a1
+	end
+	def a2
+	end
+end
+module B
+	def b1
+	end
+	def b2
+	end
+end
+class Sample
+	include A
+	include B
+		def s1
+		end
+end
+
+smp=Sample.new
+smp.a1
+smp.a2
+smp.b1
+smp.b2
+smp.s1
+```
+
+seklinde ulaşabiliriz.
+
+
+```
+class Foo
+	@count=0
+	def self.yeni
+		@count +=1
+	end
+	def self.current_count
+		@count
+	end
+end
+class Bar < Foo
+	@count = 0
+end
+
+Foo.yeni
+Foo.current_count
+Bar.yeni
+Bar.current_count
+```
+
+seklinde de yazılabilir.
+
+###### DateTime ve İşlemleri
+
+**Time** sınıfı zaman göstermek amaçlı kullanılmaktadır.
+
+**DateTime sınıfı** ile her türlü zaman hesaplanabilir.
+
+```
+Time.now
+```
+yukarıdaki ifade şimdiki zamanı verecektir. 
+
+> Bu gibi *Time* metodları genellikle ingilizce kelime anlamlarıyla da kullanılabilir.
+
+#### Dosyalama İşlemleri
+
+**main puts => $STDOUT**
+**main gets => $STDN**
+seklinde Standart output ve standart output vermektedir.
+
+> File.delete(' ') 	#dosya silinebilir.
+> File.open('dosya_adi', 'acma modu') #dosya *w(write)*, *r(read)* ve *a(add)* modlarıyla acılabilir.
+> File.close  	#dosyayı kapatmayı saglıyor.
+> f=File.open('','w')
+  f.puts("hello file operation")   	#dosyaya veri yazmamızı sağlıyor.
+  f.readlines[1] 	#dosyadaki 1. satırı geri döndürecektir.
+> File.exist? #ile de dosyanın var olup olmadığını kontrol ediyoruz.
+> file.size		# ile dosyanın boyutunu öğrenmeyi sağlıyoruz.
+
+  
