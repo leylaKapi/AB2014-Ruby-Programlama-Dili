@@ -1436,8 +1436,73 @@ end
 ```
 ifadesinde Dikdörtgen classından türetilen Kare sınıfı ve hesaplanan dikdörtgen cevresi ve kare alanıdır.
 
+```ruby
+class Ornek
+	def initialize(params={})
+		@ad=params[:ad] if params[:ad]
+		@armut=params[:armut] if params[:armut]
+	end
+end
+
+o=Ornek.new(ad: "Ali")
+```
+
+- Ruby çoğul kalıtımı desteklemez.
+- *super* metodu sadece initialize metodu için geçerli değildir. Herhangi bir metodta da kullanılabilir.
+- Direk class üzerinden erişmek istiyorsak **self** komutunu kullanabiliriz. Ama o zamanda nesne üzerinden çağıramayız.
+
+```ruby
+def self.sayac_goster
+...
+end
+puts Ornek.sayac_goster
+```
+şeklinde direk çağırabilirim. Ama yukarıdaki metodu
+
+```ruby
+p=Ornek.new(" ")
+puts p.sayac_goster
+```
+seklinde **kullanamayız** hata verecektir.
+
+## Modüller
+
+Modüller sınfların aksine sadece metodları ve sabitleri barındırmak için kullanılırlar.
+
+```ruby
+module Ornek
+SABIT = 26
+end
+```
+
+erişim içinde direk **::** kullanabiliriz.
+
+```
+Ornek::SABIT
+```
+veya
+
+```
+LyricsParts::FIRST[0]  #Modülu ile LyricsParts 'in içindeki FIRST adli değişkenin 0. elemanını döndürüyor. 
+```
+
+seklindedir.
+
+> Ama Örnek modülunun içinden örnek metodu çağıramayız.
+
+> **char** metod direk karakterlerine ayırıyor.
+
+```ruby
+
+"abc".char  #["a","b","c"] 
+```
+
+seklinde olacaktır.
+
+> **.split** metodu kelimeliyi harflerine ayırmayı sağlıyor, *char* ile aynı işi görüyo diyebiliriz.
 
 
+## Bloklar
 
 
 
