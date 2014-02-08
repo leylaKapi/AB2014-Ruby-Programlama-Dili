@@ -59,9 +59,9 @@ irb(main):004:0> _ * 3
 Yukarıda görüldüğü üzere *irb*, ruby terminalinin açılmasını; *exit* çıkmamızı sağlar. Bununla birlikte *irb --simple -prompt* ise terminalin daha düzgün görünmesini sağlar . Gözümüze çarpan diğer bir öge 
 *_* işareti bir önceki işlemi alıp onunla işlem yapmamızı sağlıyor .
 
- ``` 
+``` 
 system('clear')
-    ```
+```
     
 ile de terminalin temizlenmesini sağlayacaktır.
 
@@ -82,7 +82,6 @@ irb(main):011:0> a.reverse
 irb(main):012:0> "I love
 irb(main):013:0" ruby"
 =>  "I love\nruby
-
 ```
   
 
@@ -95,23 +94,22 @@ Yukarıdaki kodda görüldüğü üzere *.reverse* metodu girilen ifadeyi terste
 - Diger dillerde olduğu gibi karşılaştırma yaparken <,>, ==,! (küçük,büyük,eşit,değil) ifadeleri kullanılır.
 
 
-    ``` 
-     irb(main):001:0 3 > 5
-  => false
-  irb(main):002:0 3 < 5
-  => true
-  irb(main):003:0 3 == 5
-  => false
-  irb(main):004:0 !13
-  => false
-  irb(main):005:0 true.class
-  => TrueClass
-  irb(main):006:0 false.class
-  => FalseClass
-  irb(main):007:0 nil.class
-  => NilClass
- 
-    ```
+``` 
+irb(main):001:0 3 > 5
+=> false
+irb(main):002:0 3 < 5
+=> true
+irb(main):003:0 3 == 5
+=> false
+irb(main):004:0 !13
+=> false
+irb(main):005:0 true.class
+=> TrueClass
+irb(main):006:0 false.class
+=> FalseClass
+irb(main):007:0 nil.class
+=> NilClass
+```
     
 Ruby dilinde herşeyin bir nesne olduğundan ve bir sınıftan türediğinden bahsetmiştik, burda gözümüze çarpan true, false, nil bile bir classtan türediğini görmekteyiz.
 
@@ -124,11 +122,11 @@ Ruby de mantıksal değerlerle alakalı Boolean veya Bool gibi sınıflar bulunm
 - Metodların tanımlanması **def** ile başlar , **end** ile biter.
 
 
- ``` 
+``` 
 def metod_adi
 ...
 end
-    ```
+```
   
 Eğer parametre alacaksa
 
@@ -136,38 +134,42 @@ Eğer parametre alacaksa
 def metod_adi(param1)
 ...
 end
-    ```
+```
+    
     
 ``` 
 def metod_adi(param1, param2)
 ...
 end
-    ```
+```
     
 şeklindedir.
 
 **Ayrıca** parantez kullanımı zorunlu değildir.
+
 ``` 
 def metod_adi param1, param2, ...
 ...
 end
-```    
+```  
+
+
 şeklindedir.
 
-	 ``` 
- 	    def topla sayi1, sayi2
-            sayi1 + sayi2
-        end
-        puts "Toplam Sonucu: ", topla(3,5)
-     ```
+``` 
+def topla sayi1, sayi2
+    sayi1 + sayi2
+end
+puts "Toplam Sonucu: ", topla(3,5)
+```
      
      
 Yukarıdaki kodları bir bir dosyaya atıp orda calıstırınız, bunun içinde terminal üzerinden dosyanın bulunduğu dizine gidip
 
 
-	 ``` 
- 		ruby proje_adi
-    ```
+``` 
+ruby proje_adi
+```
     
 komutlarını yazmalısınız.
 
@@ -175,32 +177,32 @@ Yukarıdaki topla metodu tanımlanmıs ve bu metod iki değişken alıp toplama 
 
 - Metod isimleri **?, ! veya =** karakterlerinden biri ile bitiyorsa özel anlamları vardır. 
  
-	 ``` 
- 	sorgulama?    #True veya false değeri döndürür.
-    ```
+``` 
+sorgulama?    #True veya false değeri döndürür.
+```
     
- ``` 
- 		deger_degisikligi = ...   #bir değiskenin degerini değiştirmeye yönelik kullanılır, atama operatördür.
-    ```
+``` 
+deger_degisikligi = ...   #bir değiskenin degerini değiştirmeye yönelik kullanılır, atama operatördür.
+```
     
- ``` 
- 	tehlikeli!    #ifadesi kullandığımız metnin orjinalini değiştirir.
-    ```
+``` 
+tehlikeli!    #ifadesi kullandığımız metnin orjinalini değiştirir.
+```
 
 
-	 ``` 
-        irb(main):001:0> a="Ruby"
-        => "Ruby"
-        irb(main):002:0> a.reverse
-        => "ybuR"
-        irb(main):003:0> a
-        => "Ruby"
-        >> exit
-        irb(main):004:0> a.reverse!
-        =>  "ybuR"
-        irb(main):005:0> a
-        =>  "ybuR"
-    ```
+``` 
+irb(main):001:0> a="Ruby"
+=> "Ruby"
+irb(main):002:0> a.reverse
+=> "ybuR"
+irb(main):003:0> a
+=> "Ruby"
+>> exit
+irb(main):004:0> a.reverse!
+=>  "ybuR"
+irb(main):005:0> a
+=>  "ybuR"
+```
 
 
 Yukarıdaki örnekte girilen a değerinin **!** karakteri kullanılarak orjinalini değiştirmiştir.
@@ -208,27 +210,28 @@ Yukarıdaki örnekte girilen a değerinin **!** karakteri kullanılarak orjinali
 ##İsimlendirme Kuralları
 
 - Sınıf, module ve sabit isimler büyük harfle başlar.
+
 ``` 
- class SinifAdi
-  ...
-  end 
-  module ModulAd
-  ...
-  end
-  PI_SABITI = 3,14156
-     ```
+class SinifAdi
+...
+end 
+module ModulAd
+...
+end
+PI_SABITI = 3,14156
+```
 
 seklinde tanımlanmalıdır, ayrıca sabitler bilindiği üzre değiştirilmezler, değiştirilmek istense hata verirler.
 
 
-	 ``` 
-        irb(main):001:0> PI_SABITI = 3,14156
-        => [3,14156]
-        irb(main):002:0> PI_SABITI = 2
-        (irb):47: warning: already initialized constant PI_SABITI
-        (irb):46: warning: previous definition of PI_SABITI was here
-        => 2
-    ```
+``` 
+irb(main):001:0> PI_SABITI = 3,14156
+=> [3,14156]
+irb(main):002:0> PI_SABITI = 2
+(irb):47: warning: already initialized constant PI_SABITI
+(irb):46: warning: previous definition of PI_SABITI was here
+=> 2
+```
 
 olacaktır.
 
@@ -236,9 +239,9 @@ olacaktır.
 
 
 ```
-	yerel_degisken = "bu şekildedir."
-	plaka = 20 
- ```
+yerel_degisken = "bu şekildedir."
+plaka = 20 
+```
 
 gibidir.
 
@@ -246,18 +249,20 @@ gibidir.
 
 
 ```
-	$global_degisken 
- ```
+$global_degisken 
+```
 
 seklindedir.
 
 - **Örnek(instance) değişkenleri** '@' ile sınıf değişkenleri '@@' ile başlar.
 
 ```
-	@örnek_degisken
+@örnek_degisken
 ```
-	@@sınıf_degisken 
- ```
+
+```
+@@sınıf_degisken 
+```
  
 seklindedir.
 
@@ -265,21 +270,21 @@ seklindedir.
 
 
 ```
-	ruby -e "puts 'Merhaba'" 
-	=> Merhaba
- ```
+ruby -e "puts 'Merhaba'" 
+=> Merhaba
+```
  
 yapılabiilir. Ancak bu yöntem çok tercih edilen bir yöntem değildir.
 
 ***
 
-	 ``` 
-        def degistir(deger)
-        degisken = deger
-        end
-        puts "Degiskenin degeri: #{degistir(20)}"
-        => Degiskenin degeri: 20
-    ```
+``` 
+def degistir(deger)
+    degisken = deger
+end
+puts "Degiskenin degeri: #{degistir(20)}"
+=> Degiskenin degeri: 20
+```
     	
 
 cıktıyı almaktayız.
@@ -292,18 +297,17 @@ cıktıyı almaktayız.
 
 Eger biz **harici_dosya.rb** içindekileri **calıstıgımız_dosya.rb** içine embed etmek istiyorsak *load* komutu kulanılarak yapılabilir.
 
-	 ``` 
-	 harici_dosya.rb            
-    
-    ```
+``` 
+harici_dosya.rb            
+
+```
     
 ise
 
-	 ```
-	 calıstıgımız_dosya.rb
-	 load 'harici-dosya.rb' 
-       
-    ```
+```
+calıstıgımız_dosya.rb
+load 'harici-dosya.rb' 
+```
 
 
 seklinde olacaktır. 
@@ -312,9 +316,9 @@ seklinde olacaktır.
 
 Ek olarak eger ruby kutuphaneleri kullanılacaksa 
 
-	 ``` 
-        require 'kutuphane_adi'
-    ```
+``` 
+require 'kutuphane_adi'
+```
 
 
 seklinde kullanılır. Rails'te genellikle *autoload* kullanırız. *autoload* dosyayı otomatik olarak yukler.
@@ -323,25 +327,29 @@ seklinde kullanılır. Rails'te genellikle *autoload* kullanırız. *autoload* d
 
 **Gem** ile ilgili bir kac komut yazmakta yarar var gibi ,
 
-	 ``` 
-       gem -v   	#alınan gem'in versiyonunu görmek amacıyla kullanılır
-       gem update --system  #system update etmeyi saglar, eger hata veriyorsa **update** yerine **upgrade** kullanılabilir.
-       gem list  	#paketlerin listesini gösterecektir.
-       gem list -r  	#yuklenebilecek gemleri gösterr.
-       gem install pry  	#terminale daha fazla renk gelmesini renkli yazımı saglar.
-       gem install pry --no-doc  	#denilerek pry'in sahip olduğu dokumantasyonu kurmamak için kullanıyoruz (ruby'nin son versiyonlarında **--no-ri**) dir.
-       gem uninstall paket_adi 	#paket kaldırmak için kullanılır.
-       
-    ```
+``` 
+gem -v   	#alınan gem'in versiyonunu görmek amacıyla kullanılır
+gem update --system  #system update etmeyi saglar, eger hata veriyorsa **update** yerine **upgrade** kullanılabilir.
+gem list  	#paketlerin listesini gösterecektir.
+gem list -r  	#yuklenebilecek gemleri gösterr.
+gem install pry  	#terminale daha fazla renk gelmesini renkli yazımı saglar.
+gem install pry --no-doc  	#denilerek pry'in sahip olduğu dokumantasyonu kurmamak için kullanıyoruz (ruby'nin son versiyonlarında **--no-ri**) dir.
+gem uninstall paket_adi 	#paket kaldırmak için kullanılır.
+```
 
 
-Eger herhangi bir ruby paketi kullanılacaksa önce 	 ``` 
-     gem install paket_Adi
-    ```
+Eger herhangi bir ruby paketi kullanılacaksa önce 	 
+
+``` 
+gem install paket_Adi
+```
+
 komutu kullanılarak paket indirilir, sonra onu calıstıgımız_dosya.rb içine embed etmek için 
-	 ``` 
-        require 'paket_adi'
-    ```
+	 
+``` 
+require 'paket_adi'
+```
+
 seklinde kullanabiliriz.
 
 **Projemde herhangi 10 tane paket kullanmam gerekiyorsa hepsinin teker teker install edip require mı etmem gerekli ? **
