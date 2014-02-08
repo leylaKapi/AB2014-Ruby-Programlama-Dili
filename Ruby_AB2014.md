@@ -1912,6 +1912,8 @@ seklinde Standart output ve standart output vermektedir.
 > f=File.open('','w')
   f.puts("hello file operation")   		#dosyaya veri yazmamızı sağlıyor.
   f.readlines[1] 						#dosyadaki 1. satırı geri döndürecektir.
+  
+  
 > File.exist? 							#ile de dosyanın var olup olmadığını kontrol ediyoruz.
 > file.size								# ile dosyanın boyutunu öğrenmeyi sağlıyoruz.
 
