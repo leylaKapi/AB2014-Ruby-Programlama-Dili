@@ -1687,22 +1687,125 @@ end
 ```
 seklinde de yazılabilir.
 
+ #### Hata Yönetimi
  
+- Hata yönetimini **rescue** kullanarak yakalayabiliriz, rescue kullanımı *break* ve *end* tagları arasına yazılabilir.
+
+```ruby
+begin
+rescue
+end
+```
+
+- Ayrıca *begin* ve *end* taglarını blok oluştururken de kullanabiliriz.
+- **raise** ilede olası bir hata durumuna karşı hata oluşturmayı sağlıyor.
+
+```ruby
+class X < Y   	#ifadesi Y'den türeyen X anlamına gelmektedir.
+end 
+```
+
+> **ensure** metodu ile bir hata olması durumunda kesinlike çalışmasını istediğimiz kodları çalıştırır.
+
+### Class ve Girişler
+
+```
+def initialize
+end
+```
+yukardaki metod ile encapsulation yapabiliyoruz,yani initialize metodu kullanılarak getter ve setter oluşturabiliyoruz.
+
+```
+class Kisi
+def initialize(ad,soyad)
+@ad=ad
+@soyad=soyad
+end
+end
+kisi=Kisi.new("Ali","Kara")
+```
+seklinde Kisi adlı classın initialize metodu kullanılarak getter ve setter olusturulabilir.
+
+veya MultiMatching olarak yazılarakta yapılabilir.
+
+```ruby
+class Kisi
+def ad
+@ad
+end
+end
+```
+seklinde de ulasılabilir.
+veya önceden kullandığımız *attr_accessor* ilede olusturabiliriz.
+
+```
+class Kisi
+def initialize(@ad,@soyad)
+@ad, @soyad =ad,soyad
+@@sinif_ad += 1
+end
+end
+```
+ifadesinde sınıf değişkenlerini geri döndürür.
+
+> **.end_with?** satır sonu veya paragraf sonu kontrolleri yapmamızı sağlayan metodtur..
+
+> **start_with?** satır başı kontrollerin yapılmasını sağlayan metodtur.
+
+> İsimlendirme yapılırken dikkat edilmesi gereken noktalardan birisi de buyuk , kucuk harflerdir. Çünkü Buyuk harf ile girilen bir degişkeni program sonra sabit olarak kabul edebiliyor.
+
+> **uniq** metodu bir cümlede fazladan kullanılan kelimeleri atmamızı sağlıyor.
+
+
+```ruby
+@words=['mavi','yeşil','mavi','kırmızı']
+@words.uniq 		#['mavi','yesil','kırmızı']
+```
+seklinde olacaktır.
+
+> Modül içerinde örnek bir metod kullanacaksam **self** komutunu kullanmam gereklidir.
+
+```
+module Ornek
+def metod
+end
+end
+Ornek.metod 		#ifadesi seklinde metoda erişemeyiz hata verecektir.
+```
+ama
+
+```ruby
+module Ornek
+def self.metod
+end
+end
+```
+seklinde erişilebilir.
 
 
 
+> Modul içindeki class lara ulaşmak için "::" kullanılması gerektiğinden bahsetmiştik.
+
+```
+module A
+	class Ornek
+		def metod?()
+		end
+	end
+end
+nesne = A::Ornek.new
+puts nesne.metod?
+```	
+seklinde kullanılabilir.
+
+**Ayrıca** modulleri dahil etmenin iki yolu vardır. **include** ve **extend** ile sağlıyor. 
+
+> *include* kullanarak Örnek metod haline geliyor, soyagacında değişikliğe neden oluyor.
+> *extend* kullanarak sınıf metodu olarak kullanılıyor, yani soyagacında bir değişiklik olmuyor.
+
+> Eger soyagacında **Kernel -> Module ** şekilinde bir ifade çıkıyorsa burdan *include* ile eklenmiştir, diyebiliriz, değilse de *extend* ile eklenmiştir, deriz.
 
 
 
-
-
-
-
-    
-	
-
-
-
- 
 
 
