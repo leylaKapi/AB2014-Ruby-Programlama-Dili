@@ -2,7 +2,7 @@
 - [Ruby-lang](https://ruby-lang.org)
 - [Nitrous](https://nitrous.io)
 
-*Bu Notlar Akademik Bilişim eğitimlerinden* **Sıtkı Bagdat** *hocamızın notlarından düzenlenmiştir.* 
+*Bu Notlar Akademik Bilişim eğitimlerinden* **Sıtkı Bağdat** *hocamızın notlarından düzenlenmiştir.* 
 ##Ruby bir programlama dilidir.
 
 - Ruby, okunabilirliği yüksek bir dildir.
@@ -147,18 +147,12 @@ end
 şeklindedir.
 
 **Ayrıca** parantez kullanımı zorunlu değildir.
-
-
-
 ``` 
 def metod_adi param1, param2, ...
 ...
 end
 ```    
-
-
 şeklindedir.
-
 
 	 ``` 
  	    def topla sayi1, sayi2
@@ -214,19 +208,15 @@ Yukarıdaki örnekte girilen a değerinin **!** karakteri kullanılarak orjinali
 ##İsimlendirme Kuralları
 
 - Sınıf, module ve sabit isimler büyük harfle başlar.
-
-	 ``` 
-      class SinifAdi
-        ...
-      end
-        
-	  module ModulAdi
-	  ...
-	  end
-	
-	  PI_SABITI = 3,14156
-        
-    ```
+``` 
+ class SinifAdi
+  ...
+  end 
+  module ModulAd
+  ...
+  end
+  PI_SABITI = 3,14156
+     ```
 
 seklinde tanımlanmalıdır, ayrıca sabitler bilindiği üzre değiştirilmezler, değiştirilmek istense hata verirler.
 
@@ -961,7 +951,7 @@ Bu durumda iki farkı yazım türü karsımıza çıkmaktadır.
 
 
 
-```
+ ``` 
 	#Ruby 1.9'dan önce
 ogrenci={:ad =>'Ali', :soyad ='Kara'}     
  ```
@@ -1262,9 +1252,25 @@ ifadesi çarpma işlemini yapacaktır.
 	 class B < A
 	 	end	      ``` ifadesinde B'nin A'dan türediğini görmekteyiz. Ayrıca
 	 	 ```B.instance_methods.size 	#56
-	 	 Object.instance_methods.size 		#54	      ```
+	 	 Object.instance_methods.size 		#54	      
+	 	 ```
+	 	 
 olur.Aslında B objenin instance methodlarından türemiş diyebiliriz.
 
+```
+	class Dikdörtgen
+		def initialize(uzunluk,yukseklik)
+			@uzunluk,@yukseklik=uzunluk,yukseklik
+		end
+		def cevre() 2*(@uzunluk+@yukseklik)end
+		end
+	class Kare < Dikdörtgen
+		def initialize(uzunluk)
+			@uzunluk =(@uzunluk)*(@uzunluk)
+		end
+	end
+```
+ifadeisnde Dikdörtgen classından türetilen Kare sınıfı ve hesaplanan dikdörtgen cevresi ve kare alanıdır.
 
 
 
