@@ -23,13 +23,13 @@
 - DRY (Don't repeat yourself)
 - TIMTOWTDI (There is more than one way to do it)
 
-##Ruby.philosopy[]
+## Ruby.philosopy[]
+
 - **Ruby.philosopy[1] **
 
 Perl'den daha güçlü Phyton'dan daha fazla nesne yönelimli betik bir dildir.
 
-
-              Perl +Smalltalk +Phyton + Lisp +Ada+ ... = Ruby 
+> Perl + Smalltalk + Phyton + Lisp + Ada + ... = Ruby 
    
 - **Ruby.philosopy[2]**
  
@@ -41,23 +41,23 @@ Amaç programlama yaparken, kendi düşüncelerini sade ve okunabilir bir şekil
 
 ## Irb ve Repl İşlevleri
 
-	 ``` 
- 		irb
-        irb(main):001:0> 2+2
-        => 4
-        exit
-        irb --simple -prompt
-        >> 12.class
-        => Fixnum
-        >> exit
-        irb(main):003:0> 2*9/3+7
-        => 13
-        irb(main):004:0> _ * 3
-        =>39
-    ```
+```bash 
+irb
+irb(main):001:0> 2+2
+=> 4
+exit
+irb --simple -prompt
+>> 12.class
+=> Fixnum
+>> exit
+irb(main):003:0> 2*9/3+7
+=> 13
+irb(main):004:0> _ * 3
+=>39
+```
 
-  	
-Yukarıda görüldüğü üzere *irb*, ruby terminalinin açılmasını; *exit* çıkmamızı sağlar. Bununla birlikte *irb --simple -prompt* ise terminalin daha düzgün görünmesini sağlar . Gözümüze çarpan diğer bir öge *_* işareti bir önceki işlemi alıp onunla işlem yapmamızı sağlıyor .
+Yukarıda görüldüğü üzere *irb*, ruby terminalinin açılmasını; *exit* çıkmamızı sağlar. Bununla birlikte *irb --simple -prompt* ise terminalin daha düzgün görünmesini sağlar . Gözümüze çarpan diğer bir öge 
+*_* işareti bir önceki işlemi alıp onunla işlem yapmamızı sağlıyor .
 
  ``` 
 system('clear')
@@ -65,25 +65,25 @@ system('clear')
     
 ile de terminalin temizlenmesini sağlayacaktır.
 
-    ``` 
-    irb(main):008:0> self
-    => main
-    ```
+```bash 
+irb(main):008:0> self
+=> main
+```
 
 main classta yazdığımızı gösterir.
 
 **Ayrıca**
 
-    ``` 
-    irb(main):010:0> a="Ruby"
-	=> "Ruby"
-	irb(main):011:0> a.reverse
- 	=> "ybuR"
- 	irb(main):012:0> "I love
- 	irb(main):013:0" ruby"
- 	 =>  "I love\nruby
- 
-    ```
+```bash 
+irb(main):010:0> a="Ruby"
+=> "Ruby"
+irb(main):011:0> a.reverse
+=> "ybuR"
+irb(main):012:0> "I love
+irb(main):013:0" ruby"
+=>  "I love\nruby
+
+```
   
 
 Yukarıdaki kodda görüldüğü üzere *.reverse* metodu girilen ifadeyi tersten yazdırmayı sağlar. Ayrıca Eğer açılan tırnak ifade yazıldıktan sonra kapatılmadı ise **>** yerine **"** ifadesi olmaktadır .
@@ -284,7 +284,8 @@ yapılabiilir. Ancak bu yöntem çok tercih edilen bir yöntem değildir.
 
 cıktıyı almaktayız.
 
- 
+
+ 
 ##Baska bir dosyanın dahil edilmesi
 
 **harici_dosya.rb** adlı ruby dosyamız olsun , ek olarak ta üzerinde çalışacagımız dosyamız olsun **calıstıgımız_dosya.rb** olsun.
@@ -503,7 +504,8 @@ seklinde kullanılabilir. Yukarıdaki işlemde *times* ile bir döngü yazılmı
 	=>10      
     ```
 
-seklinde çıktısı olur. 
+seklinde çıktısı olur.
+ 
 - *1.upto(10){...}* ile de 'times' benzer bir kullanım sunar.
 
 	 ``` 
@@ -549,9 +551,11 @@ veya
 
 	 ``` 
 	puts "#{'akademik'.capitalize} #{'bilisim'.upcase}"
-			=>	Akademik BILISIM     
+		
+	=>	Akademik BILISIM     
     ```
-   
+
+   
 
  seklinde olacaktır.
  -A yrıca metinlerde türkçe karakter desteği için de Unicode-Utils kutuphanesi vardır.Bunu da 
@@ -584,7 +588,8 @@ seklinde indirip, dosyanın içine
 	    
 ``` 
  metin=%Q{Merhaba}
-	 => "Merhaba"	  ```
+	 => "Merhaba"
+	  ```
 	    
 seklindedir.
 
@@ -601,7 +606,8 @@ olacaktır.
 
 ``` 
 	 puts "Metnin içine herşey gömebiliriz #{def isim 
-	 	$ad.capitalize + " "+$soyad.upcase	 end} puts "benim adım #{isim}""
+	 	$ad.capitalize + " "+$soyad.upcase
+	 end} puts "benim adım #{isim}""
 	    ```
 
 seklindedir.
@@ -614,7 +620,8 @@ soyad="Rails"
 	metin = << FALAN
 	Ben uzun bir metinim
 	#{$ad} #{$soyad}
-		FALANp metin	
+		FALAN
+p metin	
 	    ```
 	    
 şeklindede kullanabiliriz.
@@ -718,7 +725,8 @@ kullanılır.
 	 [Â-Za-z0-9_] = \W 		#not a word character
    ``` 
    	
-   
+
+   
 - ``` 
  ifade1 = /.*\.$/  		#seklinde nokta ile bitecek demek.
  ifade2 = Regexp.new('^[a-z]+$')      #ifadesi a ile baslayıp z ile bitecek anlamına gelmektedir.
@@ -769,7 +777,8 @@ seklinde olacaktır.
 	 aralik=(2 .. 8)
 	 puts aralik.to_a.inspect    #{2,3,4, ...,8}
 	puts aralik.include? 7   	#true
-	aralik.each{|i| puts "Deger: #{i}" if i>4}		   ``` 
+	aralik.each{|i| puts "Deger: #{i}" if i>4}	
+	   ``` 
 	   seklinde kullanılır.
 	   
 veya
@@ -802,7 +811,8 @@ seklindede kullanılır.
 	harfler = ('a' .. 'z')
 	sesli = %w{a e i o u}
 	sessiz =harfler.reject{|letter| sesli.include?(letter)}
-	puts sessiz.inspect	#Sessiz harfleri verecektir.		
+	puts sessiz.inspect
+	#Sessiz harfleri verecektir.		
    ```
    
 
@@ -919,7 +929,8 @@ seklindede tanımlanabilir.
 
 
 	 ``` 
-	dizi = %w(#{1+1}  #{2+2})		#=> ["2", "4"]	
+	dizi = %w(#{1+1}  #{2+2})		#=> ["2", "4"]
+	
 	     
     ```
 seklinde olur. Yukarıdaki özellik 2.0 ile gelen bir özelliktir.
@@ -1176,7 +1187,8 @@ ifadesinde *gun* degiskeninin degeri pazartesi oldugunda kontrol yapısına gird
 - **any?** metodunda ise birinin verilen kurala uyması yeterlidir.
 
 
-  ``` 
+ 
+ ``` 
 	d=[13,35,65]
 	d.any?{|x| x>20}    #true
      ```
@@ -1199,24 +1211,28 @@ ifadesinde *gun* degiskeninin degeri pazartesi oldugunda kontrol yapısına gird
 	 ``` 
 	d.find{|x| x>50}  #65    
      ``` ifadesi 50'den buyuk ilk elemanı geri döndürüyor.
-     
+
+     
 -**find all** metodu *find* metodundan farklı olarak verilen kosula uyan tum degerleri geri donduruyor.
 
 	 ```
-	 d=[13,35,65,85]	 d.find all{|x| x>50}    #[]65, 85]   
+	 d=[13,35,65,85]
+	 d.find all{|x| x>50}    #[]65, 85]   
      ```
 olacaktır.
 
 -**reduce** metodu ise
    
 	 ```
-	 d=[13,35,65,85]	 d.reduce{|sum,x| sum +=x} 
+	 d=[13,35,65,85]
+	 d.reduce{|sum,x| sum +=x} 
 	#198	 
      ```
 
 ifadesinde her x elemanını *sum*'a ekleyip en son *sum* ifadesini döndürüyor.
 
-	 ```	 d.reduce(10){|sum, x| sum *= x}    #25138750
+	 ```
+	 d.reduce(10){|sum, x| sum *= x}    #25138750
      ```
 ifadesi çarpma işlemini yapacaktır.
 
@@ -1285,7 +1301,8 @@ ifadeisnde Dikdörtgen classından türetilen Kare sınıfı ve hesaplanan dikd�
 
 
    
-   	   
+   	
+   
 
 
    
