@@ -1906,12 +1906,12 @@ yukarıdaki ifade şimdiki zamanı verecektir.
 **main gets => $STDN**
 seklinde Standart output ve standart output vermektedir.
 
-> File.delete(' ') 						#dosya silinebilir.
-> File.open('dosya_adi', 'acma modu') 	#dosya *w(write)*, *r(read)* ve *a(add)* modlarıyla acılabilir.
-> File.close  							#dosyayı kapatmayı saglıyor.
-> f=File.open('','w')
-  f.puts("hello file operation")   		#dosyaya veri yazmamızı sağlıyor.
-  f.readlines[1] 						#dosyadaki 1. satırı geri döndürecektir.
+**#** File.delete(' ') 						#dosya silinebilir.
+**#** File.open('dosya_adi', 'acma modu') 	#dosya *w(write)*, *r(read)* ve *a(add)* modlarıyla acılabilir.
+**#** File.close  							#dosyayı kapatmayı saglıyor.
+**#** f=File.open('','w')
+**#**  f.puts("hello file operation")   		#dosyaya veri yazmamızı sağlıyor.
+**#**f.readlines[1] 						#dosyadaki 1. satırı geri döndürecektir.
   
   
 > File.exist? 							#ile de dosyanın var olup olmadığını kontrol ediyoruz.
