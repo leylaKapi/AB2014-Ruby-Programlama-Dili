@@ -1286,7 +1286,25 @@ ifadesinin
 .include?    
 ```
 ifadesine eşdeğer olmasıdır.
-     
+
+**Ruby de de diger dillerde oldugu gibi for, while döngülerini içerir** ancak zorunlu olmadıkça kullanılmazlar.
+
+```ruby
+puts "Ruby" while i<10
+```
+seklinde sonsuz döngü oluşturulabilir.
+
+**loop döngüsü**
+```
+loop do
+puts "ruby"
+end
+```
+seklinde sonsuz bir döngü oluşturulabilir.
+
+> Tüm döngülerde geçerli olmak üzre döngüden çıkmak için **break** bir sonraki adım için **next** geçerli adım için **redo**, döngünün tekrarlanması için **retry** kullanılır. 
+
+
 
 ## Enumerable Modülu
 
@@ -1376,6 +1394,50 @@ ifadesinde her x elemanını *sum*'a ekleyip en son *sum* ifadesini döndürüyo
 d.reduce(10){|sum, x| sum *= x}    #25138750
 ```
 ifadesi çarpma işlemini yapacaktır.
+
+```ruby
+d=[13,35,65,85]
+d.reduce(:+)
+#198
+```
+seklindede yazılabilir.
+
+> **.zip** metodu ise
+
+```ruby
+d2.zip d1 
+```
+ifadeside iki metodu birleştirmeyi sağlar.
+
+> **.map** metodu orjinal dizinlerde işlem yapıyor.
+
+```ruby
+d.map
+```
+
+```ruby
+d=[13,35,65,85,45]
+d.map{|x| x+5}
+#[18,40,70,90,50]
+```
+
+```ruby
+m=["ali","veli","nuri"]
+m.map{|x| x.upcase}
+#["ALI","VELI","NURI"]
+```
+seklinde olacaktır.
+
+> **rand(0..2)** metodu ile 0 ile 2 arasında rastgele değer üretir.
+
+
+> **.max** metodu dizideki max değerini döndürüyor.
+
+```
+d.zip.max    	#birleştirilen dizideki max değerini döndüyor. #85
+```
+
+
 
 
 **Class Çagırma**
@@ -1608,7 +1670,23 @@ a.ad = "Ali"
 a.soyad = "Kara"
 ```
 seklinde olur, yukarıda kullanılan **attr_accessor** komutu degiskenlerin encapsulation olmasını yani get ve set lerini olusturmaktadır.
- 
+
+```ruby
+class Kisi
+attr_accessor :ad, :soyad
+def initialize(ad, soyad)
+@ad=ad
+@soyad=soyad
+end
+def isim
+"#{ad} #{soyad}"
+end
+end
+class Ogrenci < Kisi
+end
+```
+seklinde de yazılabilir.
+
  
 
 
