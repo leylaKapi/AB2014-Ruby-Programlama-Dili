@@ -1139,7 +1139,9 @@ ifadesinde *gun* degiskeninin degeri pazartesi oldugunda kontrol yapısına gird
 	String === degisken 
      ``` kullanıldığında 	 ``` 
 	true   
-     ``` degerini döndürür. Bunun nedeni 	 ``` 
+     ``` 
+     degerini döndürür. Bunun nedeni 
+     	 ``` 
 	=== 
      ``` ifadesinin 	 ``` 
 	.include?    
