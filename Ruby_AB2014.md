@@ -1574,10 +1574,41 @@ seklindede çagrılabilir.
 
 ##### yield
 
+Gönderilen isimsiz bloğu kullanabilmemizi sağlıyor.
 
-   
+```
+def hesapla(s1,s2)
+block_given? yield(s1,s2); s1+s2
+end
+toplam=hesapla(3,5)
+fark=hesapla(3,5){|a,b| a-b}
+
+```
+şeklinde kullanılır.
+
+- Ayrıca *proc* kullanımı performansın artmasınıda sağlıyor.
 
 
+##### Proc
+
+-Proc nesnesi oluşturmak için Proc.new kullanılır.
+-lambda, proc'un özel halidir.  Aralarında cok küçük bir fark var.
+
+**lambda ile proc arasındaki fark** bir metod içerisinde **return** kullanıldığında ortaya çıkmaktadır.lambda kendini metodun bir parçası olarak görmektedir. Ama proc ise metodun asıl kendisi olarak görmektedi, bu nedenle proc return gördüğü zaman direk metodtan çıkmaktadır. Eger metodun direk return den sonra cıkmasını istiyorsak Proc kullanılır. Kısacası *return* olmadığı sürece ikiside aynı şeylerdir.
+
+```ruby
+class Kisi
+attr_accessor ad, soyad
+def isim 
+@ad +" "+@soyad
+end
+end
+a=Kisi.new
+a.ad = "Ali"
+a.soyad = "Kara"
+```
+seklinde olur, yukarıda kullanılan **attr_accessor** komutu degiskenlerin encapsulation olmasını yani get ve set lerini olusturmaktadır.
+ 
  
 
 
