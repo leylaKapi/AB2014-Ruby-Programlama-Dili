@@ -578,27 +578,29 @@ seklinde indirip, dosyanın içine
 ``` 
 require 'unicode_utils'
 ```
-	    seklinde diyebiliriz. Daha sonra
-	    ``` 
-	 UnicodeUtils.upcase("ruby")
-	 => RUBY
-	    ```
-	    şeklinde kullanabiliriz.
+seklinde diyebiliriz. Daha sonra
+
+``` 
+UnicodeUtils.upcase("ruby")
+=> RUBY
+```
+
+şeklinde kullanabiliriz.
 	    
 
 -%q => tek tırnak için kullanılabilir.
 
 ``` 
-	metin = %q<Merhaba>
-	=> 'Merhaba'
-	    ```
-	    seklinde olacaktır.
-	    
-	    
+metin = %q<Merhaba>
+=> 'Merhaba'
+```
+seklinde olacaktır.
+
+
 ``` 
- metin=%Q{Merhaba}
-	 => "Merhaba"
-	  ```
+metin=%Q{Merhaba}
+=> "Merhaba"
+```
 	    
 seklindedir.
 
@@ -606,18 +608,18 @@ seklindedir.
 
 ***
 ``` 
-	 irb(main):002:0> ?a
-	 => "a"
-	    ``` 
+irb(main):002:0> ?a
+=> "a"
+``` 
 olacaktır.
 
 - Metnin içine herşey gömebiliriz.
 
 ``` 
-	 puts "Metnin içine herşey gömebiliriz #{def isim 
-	 	$ad.capitalize + " "+$soyad.upcase
-	 end} puts "benim adım #{isim}""
-	    ```
+puts "Metnin içine herşey gömebiliriz #{def isim 
+$ad.capitalize + " "+$soyad.upcase
+end} puts "benim adım #{isim}""
+```
 
 seklindedir.
 
@@ -626,33 +628,40 @@ seklindedir.
 ``` 
 ad="Ruby"
 soyad="Rails"
-	metin = << FALAN
-	Ben uzun bir metinim
-	#{$ad} #{$soyad}
-		FALAN
+metin = << FALAN
+Ben uzun bir metinim
+#{$ad} #{$soyad}
+FALAN
 p metin	
-	    ```
+```
 	    
 şeklindede kullanabiliriz.
 
 - Bir metnin uzunluğunu bulabilmek için **length** veya **count** metodları kullanılır.
-- Method isimleri symbol olarak kullanılabiliyor, şimdilik symbollerin ``` 
-	 :symbol
-	    ``` seklinde tenımlandığını bilmeniz yeterlidir.
+- Method isimleri symbol olarak kullanılabiliyor, şimdilik symbollerin 
+
+``` 
+:symbol
+``` 
+seklinde tenımlandığını bilmeniz yeterlidir.
 	    
-*``` 
-	 swapcase
-	    ``` komutu ise büyük harfi küçüğe, küçük harfi büyüğe çevirir.
+*
+``` 
+swapcase
+``` 
+komutu ise büyük harfi küçüğe, küçük harfi büyüğe çevirir.
 	    
-*``` 
-	puts metin.split.inspect
-	    ``` metodu ise metni istediğimiz karaktere göre ayırır. Yukarıda hiçbir karakter belirtilmediğinden bosluklara göre ayırma yapıyor.
+*
+``` 
+puts metin.split.inspect
+``` 
+metodu ise metni istediğimiz karaktere göre ayırır. Yukarıda hiçbir karakter belirtilmediğinden bosluklara göre ayırma yapıyor.
 	    
 
-	    
+
 ``` 
-	 metin.sub 'm', 'a'  	#ilk gördüğü "m=>a" ceviriyor.
-	metin.gsub  'm',  'a' 		#tüm "m"leri "a" 'ya ceviriyor. 
+metin.sub 'm', 'a'  	#ilk gördüğü "m=>a" ceviriyor.
+metin.gsub  'm',  'a' 		#tüm "m"leri "a" 'ya ceviriyor. 
 ```
 	    
 
@@ -660,47 +669,70 @@ p metin
 - Süslü parantezler sadece bloklarda kullanılır.
 - Her zaman metodların sonunda **end** vardır.
 - Ruby 1.9 süürmünden önce Ruby daha yavaştı, Ama 2.0'dan sonra performance artırıldı ve garbage collection yeniden inşa edildi, Bu da ruby deki sorunları ortadan kaldırdı.
-- Herhangi bir degiskeni  Integer'a çevirmek için``` 
-	 .to_i
-	    ```
+- Herhangi bir degiskeni  Integer'a çevirmek için
+
+``` 
+.to_i
+```
 	    
-- String'e çevirmek için``` 
-	.to_s
-	    ```
+- String'e çevirmek için
+
+``` 
+.to_s
+```
 	    
-- Array'a çeirmek için``` 
-	 .to_a
-	    ```
+- Array'a çeirmek için
+
+``` 
+.to_a
+```
 	    
-- Hash'a çevirmek için``` 
-	 .to_h
-	    ```
+- Hash'a çevirmek için
+ 
+
+``` 
+.to_h
+```
 
 kullanılır.	
 
 
-##Semboller
+## Semboller
 
-- Semboller oluşturulurken ``` 
-	 :sembol_isim
-	    ```   şeklinde oluşturulur.
+- Semboller oluşturulurken 
+
+``` 
+:sembol_isim
+```   
+şeklinde oluşturulur.
 	    
 - Eger metnin içeriği herzaman değiştiriliyorsa o zaman sembol kullanmama gerek yok, zorluk yaratır. Ama değişmeyecek olan işlemler de kullanılırç ve RAM'da tutulur.
--  ``` 
-	object_id
-  ```  ile RAM'de tutulan yeri gösteriyor. 
+
+``` 
+object_id
+```  
+ile RAM'de tutulan yeri gösteriyor. 
   
-- Eger string ifadeyi symbol'e cevireceksem o zaman ``` 
-	 .to_sym
-	    ```   metodunu kullanırız.
-	    Ama symbol olanı ``` 
-	 .to_s
-	    ```  ile stringe çevirebiliriz.
+- Eger string ifadeyi symbol'e cevireceksem o zaman 
+
+``` 
+.to_sym
+```  
+metodunu kullanırız. Ama symbol olanı 
+
+``` 
+.to_s
+``` 
+ile stringe çevirebiliriz.
 	    
 - Metinleri Symbol olarak tanımladıktan sonra değiştirmek için **freeze** metodu kullanılabilir.
--  ``` 
-	 .equal? 
-   ```  metodu ile aynı nesneye sahip olup olmadığını ve symbol olarak aynımı deilmi onu karşılaştırır.
+
+
+``` 
+.equal? 
+```  
+
+metodu ile aynı nesneye sahip olup olmadığını ve symbol olarak aynımı deilmi onu karşılaştırır.
    
 
 
@@ -708,412 +740,488 @@ kullanılır.
 ##Düzenli ifadeler
 
 - Düzenli ifadeler
-``` 
-	 / ... /
-   ``` tagları arasına yazılırlar.
-  - Bir metnin düzenli ifade ile eşlenip eşlenmediğini anlamak için =~ veya **match** metodu kullanılır.
-  
-``` 
-	 {2, 5} 		#en az 2  en fazla 5 demektir.
-	 /.{2,5}/ =~  #"ali" girildiği zaman eşleşir. "ali"2 ile 5 arasındadır.   
-   ```  
 
-- ``` 
-	Eger metin içerinde **.** kullanmak istesem o zman noktayı düzenli ifadede 
+
+``` 
+/ ... /
+``` 
+tagları arasına yazılırlar.
+  - Bir metnin düzenli ifade ile eşlenip eşlenmediğini anlamak için =~ veya **match** metodu kullanılır.
+ 
+
+``` 
+{2, 5} 		#en az 2  en fazla 5 demektir.
+/.{2,5}/ =~  #"ali" girildiği zaman eşleşir. "ali"2 ile 5 arasındadır.   
+```
+
+
+> Eger metin içerinde **.** kullanmak istesem o zman noktayı düzenli ifadede 
 "\." olarak kullanırım.   ```
 
-- ``` 
-	 ^a$b => a ile başlayıp b ile biten demektir.İfadesi yerine 
-	 \A\Z şeklinde kullanılabilir.
-	 (+) => kaçtane geleceği
-	 [^0-9] sayı olmayanları yaz demek. '^' değil demektir.
-   ```  
- 
-- ``` 
-	 [A-Za-z0-9_] = \w   	#word character
-	 [Â-Za-z0-9_] = \W 		#not a word character
-   ``` 
+``` 
+^a$b => a ile başlayıp b ile biten demektir.İfadesi yerine 
+\A\Z şeklinde kullanılabilir.
+(+) => kaçtane geleceği
+[^0-9] sayı olmayanları yaz demek. '^' değil demektir.
+```  
+
+
+
+``` 
+[A-Za-z0-9_] = \w   	#word character
+[Â-Za-z0-9_] = \W 		#not a word character
+``` 
    	
 
    
-- ``` 
- ifade1 = /.*\.$/  		#seklinde nokta ile bitecek demek.
- ifade2 = Regexp.new('^[a-z]+$')      #ifadesi a ile baslayıp z ile bitecek anlamına gelmektedir.
- ifade3 = %r{^[a-z]+$} 		#a ile baslayacak ama z ile bitmeyecek demektir.
- ``` 
+``` 
+ifade1 = /.*\.$/  		#seklinde nokta ile bitecek demek.
+ifade2 = Regexp.new('^[a-z]+$')      #ifadesi a ile baslayıp z ile bitecek anlamına gelmektedir.
+ifade3 = %r{^[a-z]+$} 		#a ile baslayacak ama z ile bitmeyecek demektir.
+``` 
  
-##Aralıklar
+## Aralıklar
 
 Başlangıç ve bitiş degerleri arasında kalan değerleri alır.
+
 ``` 
-	 baslangıc..bitis
-   ``` 
+baslangıc..bitis
+``` 
+
 seklindedir.
 
 ``` 
-	 1..10 			#1, 2, 3,...,10
-	 (1..10).class   	#Range
-	 1...10 			#1, 2, 3,..., 9 kadar olur.son degeri almaz.
-   ``` 
+1..10 			#1, 2, 3,...,10
+(1..10).class   	#Range
+1...10 			#1, 2, 3,..., 9 kadar olur.son degeri almaz.
+``` 
    
-- Aralıklar ``` 
-	 .to_a
-   ``` ile diziye çevrilir.
+- Aralıklar 
+
+
+``` 
+.to_a
+``` 
+   
+ile diziye çevrilir.
    
 ``` 
 ("a".."f").to_a 		#["a", "b", "c", "d", "e", "f"]
-	 ``` 
+``` 
 	 
 seklinde olacaktır.
    
 - Aralıklarda Enumerable modülunu içerir.
 
 ``` 
-	irb(main):001:1> (1..10).step(4) {|i| puts i}	#1'den 10'a kadar 4'er 4'er artır. 
-	1			
-	5						
-	9
-	=>1..10	 
-   ``` 
+irb(main):001:1> (1..10).step(4) {|i| puts i}	#1'den 10'a kadar 4'er 4'er artır. 
+1			
+5						
+9
+=>1..10	 
+``` 
    seklinde olacaktır.
    
--``` 
+``` 
 .include? 
-   ``` metodu aralıkta olup olmadığını kontrol eder, genellikle sayılarda kullanılır.
+``` 
+   
+metodu aralıkta olup olmadığını kontrol eder, genellikle sayılarda kullanılır.
    
 
 ``` 
-	 aralik=(2 .. 8)
-	 puts aralik.to_a.inspect    #{2,3,4, ...,8}
-	puts aralik.include? 7   	#true
-	aralik.each{|i| puts "Deger: #{i}" if i>4}	
-	   ``` 
-	   seklinde kullanılır.
+aralik=(2 .. 8)
+puts aralik.to_a.inspect    #{2,3,4, ...,8}
+puts aralik.include? 7   	#true
+aralik.each{|i| puts "Deger: #{i}" if i>4}	
+``` 
+seklinde kullanılır.
 	   
 veya
 
 ``` 
-	(1..10).each do |sayi|
-	puts sayi
-	end
-   ``` 
+(1..10).each do |sayi|
+puts sayi
+end
+``` 
 seklindede kullanılır.
 
-- ``` 
-	.reject
-   ```  metodu  geriye dizi döndürüyor ve diziden eleman çıkarıyor.
-   ``` aralik2 = aralik.reject{|u| (u%2)==0}
-   		puts aralik2.inspect
-   		#[3,4,5]
-   ```  olacaktır.
+``` 
+.reject
+```  
+metodu  geriye dizi döndürüyor ve diziden eleman çıkarıyor.
+
+``` 
+aralik2 = aralik.reject{|u| (u%2)==0}
+puts aralik2.inspect
+#[3,4,5]
+```  
+olacaktır.
    
 
 ``` 
-	.class  #Array
-     ```
+.class  #Array
+```
    seklinde olmaktadır.
    
 
 
 ***
 ``` 
-	harfler = ('a' .. 'z')
-	sesli = %w{a e i o u}
-	sessiz =harfler.reject{|letter| sesli.include?(letter)}
-	puts sessiz.inspect
-	#Sessiz harfleri verecektir.		
-   ```
+harfler = ('a' .. 'z')
+sesli = %w{a e i o u}
+sessiz =harfler.reject{|letter| sesli.include?(letter)}
+puts sessiz.inspect
+#Sessiz harfleri verecektir.		
+```
    
 
 ***
 ``` 
-	sessiz.each{|ch| puts ch, if (ch == 'c')..(ch=='m')}
-	#eger ch(karakter) c ve m arasında ise yazdır    
- ```
+sessiz.each{|ch| puts ch, if (ch == 'c')..(ch=='m')}
+#eger ch(karakter) c ve m arasında ise yazdır    
+```
  
-- **===** komutu ile include aynı anlama gelmektedir.**include** ile aynı mantıkta calısır.
+> **===** komutu ile include aynı anlama gelmektedir.**include** ile aynı mantıkta calısır.
 
 
-##Diziler
+## Diziler
 
 Diziler, array sınıfı kullanılarak üretilir.
 
 ``` 
-	dizi = ["ali", 12, true, /\Aab\Z/, [1,2,3]]    
- ```
+dizi = ["ali", 12, true, /\Aab\Z/, [1,2,3]]    
+```
  seklinde tanımlanabilir.
- - ``` 
-	dizi[-1]  	#son elemanı döndürür.
-	dizi[0 .. 2]	#0. indisten baslayıp iki tane eleman al diyor.  
- ```
- - Dizilerde metinler gibi ``` 
-	+  
- ```veya
- ``` 
-	<<   
- ```
-   kullanılarak birleştirilebilir.
+``` 
+dizi[-1]  	#son elemanı döndürür.
+dizi[0 .. 2]	#0. indisten baslayıp iki tane eleman al diyor.  
+```
+ - Dizilerde metinler gibi 
+ 
+
+``` 
++  
+```
+
+veya
+
+
+``` 
+<<   
+```
+kullanılarak birleştirilebilir.
    
 ``` 
 dizi.flatten 	#[1,2,3,4,5,6]   #hepsini aynı hizada 	olusmasını saglar. 
 ``` 
  
-- Array sınıfının objelerini görmek için ``` 
-	Array.ancestors  
- ``` kullanılabilir.
+- Array sınıfının objelerini görmek için 
+
+``` 
+Array.ancestors  
+``` 
+
+ kullanılabilir.
  
 - Atama işlemlerini
- ``` 
-	a, b = 3, 5     		# a=3 ; b=5
- ```  atıyor, eger yerlerin değiştirmek istersem,
+
+
+``` 
+a, b = 3, 5     		# a=3 ; b=5
+```  
+atıyor, eger yerlerin değiştirmek istersem,
  
- ``` 
-	a, b = b, a    		#a = 5; b = 3
- ``` seklinde olacaktır.
+``` 
+a, b = b, a    		#a = 5; b = 3
+``` 
+ 
+ seklinde olacaktır.
  
 
-- ``` 
-	a,b,c = [3,5]  	#[3,5]   
- ``` ifadesinde c'ye "nil " ataması
+``` 
+a,b,c = [3,5]  	#[3,5]   
+``` 
+
+ifadesinde c'ye "nil " ataması
  yapar.
    
-- ``` 
-	.splat   
- ``` operatoru ile ``` 
-	a, *b=[1,2,3,4,5] 	# a=1 ; b=[2,3,4,5]
- ```seklinde olur.
- ``` 
-	 c = 1,[2,3,4]   =>#[1,[2,3,4]]
-	 c = 1, *[2,3,4]  =>[1,2,3,4]
- ```seklinde tanımlanabilir.
+``` 
+.splat   
+``` 
+ operatoru ile 
  
--  ``` 
-	 dizi = Array.new(3, 'x')   
- ``` ifadesi 3 elemanlı dizi oluşturur ve hepsine 'x' atar.
- - ``` 
-	dizi = ["A", "B", "C", "D"]   
- ```
+``` 
+a, *b=[1,2,3,4,5] 	# a=1 ; b=[2,3,4,5]
+```
+ 
+ seklinde olur.
+ 
+``` 
+c = 1,[2,3,4]   =>#[1,[2,3,4]]
+c = 1, *[2,3,4]  =>[1,2,3,4]
+```
+ seklinde tanımlanabilir.
+ 
+``` 
+dizi = Array.new(3, 'x')   
+``` 
+ 
+ ifadesi 3 elemanlı dizi oluşturur ve hepsine 'x' atar.
+ 
+``` 
+dizi = ["A", "B", "C", "D"]   
+```
+
  ise
- ``` 
-	 dizi[0] = 'A'
-	 dizi[1]='B'
-	 dizi[2]='C'
-	 dizi[3]='D'
-	 dizi[-1]='D'
-	 dizi[-2]='C'
-	 dizi[-3]='B'
-	 dizi[-4]='A' 
- ``` çagrılmaktadır.
+ 
+``` 
+dizi[0] = 'A'
+dizi[1]='B'
+dizi[2]='C'
+dizi[3]='D'
+dizi[-1]='D'
+dizi[-2]='C'
+dizi[-3]='B'
+dizi[-4]='A' 
+``` 
+ 
+ çagrılmaktadır.
  
 - Eger diziye ekleme yapılacaksa 
 
- ``` 
-	 dizi[4] = 'E'
-	 dizi <<  'F'  
- ```seklinde,
+``` 
+dizi[4] = 'E'
+dizi <<  'F'  
+```
+ 
+ seklinde,
  veya
- ``` 
-	 dizi.push  'G'
- ```
+``` 
+dizi.push  'G'
+```
  seklinde de eklenebilir.
  
-- ``` 
-	dizi.pop  	#sondaki elemanı cıkarıyoruz. 
-	dizi.unshift " "	#başa ekleme
-	dizi.shift 		#bastan cıkarma 
- ```
+``` 
+dizi.pop  	#sondaki elemanı cıkarıyoruz. 
+dizi.unshift " "	#başa ekleme
+dizi.shift 		#bastan cıkarma 
+```
  komutlardır.
-      ``` 
-	renkler = %w/mavi, acık\mavi, sarı, acık\sarı 
-	renkler[1] 			#acık mavi
-       ```
+ 
+``` 
+renkler = %w/mavi, acık\mavi, sarı, acık\sarı 
+renkler[1] 			#acık mavi
+```
  ***
-	 ``` 
-	gunler = ["pzt","salı","çar","per", "cum","cumr","pazr"]
-	veya
-	gunler = %w("pzt", "sal", "çar", "per", "cum",  "cumr","pzr")     
-    ```
+``` 
+gunler = ["pzt","salı","çar","per", "cum","cumr","pazr"]
+veya
+gunler = %w("pzt", "sal", "çar", "per", "cum",  "cumr","pzr")     
+```
 
 seklindede tanımlanabilir.
 
 
-	 ``` 
-	dizi = %w(#{1+1}  #{2+2})		#=> ["2", "4"]
-	
-	     
-    ```
+``` 
+dizi = %w(#{1+1}  #{2+2})		#=> ["2", "4"]
+
+
+```
 seklinde olur. Yukarıdaki özellik 2.0 ile gelen bir özelliktir.
 
 
-	 ``` 
-	sembol = %i*ali veli nuri* 		#semboller seklinde tanımlanabilir.
-	puts sembol.inspect   	#[:ali, :veli, :nuri]
-	     
-    ```
+``` 
+sembol = %i*ali veli nuri* 		#semboller seklinde tanımlanabilir.
+puts sembol.inspect   	#[:ali, :veli, :nuri]
 
-**yaml** özelliği ile tree seklinde bir görünüm sağlanır.
+```
+
+> **yaml** özelliği ile tree seklinde bir görünüm sağlanır.
 
 ##Sözlükler(Hash)
 
 
-	 ``` 
-	ogrenci = {'ad'=> Ali', 'soyad'=> 'Kara'}   	
-	#ad, soyad => key
-	#Ali, Kara => value
-	     
-    ```
+``` 
+ogrenci = {'ad'=> Ali', 'soyad'=> 'Kara'}   	
+#ad, soyad => key
+#Ali, Kara => value
+
+```
 
 Sözlükler iki parametreden oluşur, bunlar key ve value'dur. Key'ler herhangi bir türden  olabilir. 
 
-- **eql?** metoduna göre eşit olan sadece bir anahtar bulunabilir.Kısaca aynı hash'a sahipse true dondurur.
+> **eql?** metoduna göre eşit olan sadece bir anahtar bulunabilir.Kısaca aynı hash'a sahipse true dondurur.
 - Sözlüklerde anahtar olarak genelliklesemboller kullanılır.
 Bu durumda iki farkı yazım türü karsımıza çıkmaktadır.
 
 
 
- ``` 
-	#Ruby 1.9'dan önce
+``` 
+#Ruby 1.9'dan önce
 ogrenci={:ad =>'Ali', :soyad ='Kara'}     
- ```
+```
 yerine
 	
-	 ``` 
-	ogrenci={ad: 'Ali', soyad: 'Kara'}	     
-    ```
+``` 
+ogrenci={ad: 'Ali', soyad: 'Kara'}	     
+```
 seklindedir.
 	
 - Anahtarlara erişebilmek için **keys**, değerlere ulaşabilmek için **values** metodları kulanılır.
 
-	 ``` 
-	ogrenci.keys   		#[:ad, :soyad]
-	ogrenci.values 		#["Ali", "Kara"]	     
-    ```
+``` 
+ogrenci.keys   		#[:ad, :soyad]
+ogrenci.values 		#["Ali", "Kara"]	     
+```
 olacaktır.
 
 - Eger bos bir sözlğk tanımlayacak olursak
-	 ``` 
-	params={}     
-    ```
+
+
+``` 
+params={}     
+```
 seklinde tanımlanabilir.
 	
 - Anahtar kullanılarak erişim yapıldığında istediğimiz atama işlemini yapabiliyoruz.
-	 ``` 
-	"*" => tek dizi olarak atamayı saglar.
-	"**" => sözlük olarak atama yapmamızı saglar.	     
-    ```
 
 
-	 ``` 
-	ogrenci.each do |anahtar, deger|  
-	 #dizilerden farkli olarak 2 deger alıyor , nedeni hem key hemde value'ya sahip olması.	     
-    ```
+``` 
+"*" => tek dizi olarak atamayı saglar.
+"**" => sözlük olarak atama yapmamızı saglar.	     
+```
+
+
+``` 
+ogrenci.each do |anahtar, deger|  
+#dizilerden farkli olarak 2 deger alıyor , nedeni hem key hemde value'ya sahip olması.	     
+```
     
-	- ``` 
-	h1.merge h2   
-    ``` dedigimizde h1 ve h2'yi birleştiriyor.
+``` 
+h1.merge h2   
+``` 
+dedigimizde h1 ve h2'yi birleştiriyor.
     veya
-    	 ``` 
-	     h3={ad: "Ayten"}
-	     	h1.merge h3  	#"Ayten", "Kara"	     		     	    ``` olacaktır.  Bir nevi üzerine yazıyor gibide düşünülebilir.
-	     	
-- Dizide sözlüğe çevirmek için 	 ``` 
-	.to_h    
-    ``` meodu ile çevirebiliriz.
     
-###Uygulama - 1
+``` 
+h3={ad: "Ayten"}
+h1.merge h3  	#"Ayten", "Kara"	     		     	    
+``` 
+
+olacaktır.  Bir nevi üzerine yazıyor gibide düşünülebilir.
+	     	
+- Dizide sözlüğe çevirmek için 	 
+
+``` 
+.to_h    
+``` 
+metodu ile çevirebiliriz.
+    
+### Uygulama - 1
 
 Palidrom kelime: Baştan veya sondan okunuşu aynı olan kelimelerdir.
 ÖR : kazak, madam => palidrom kelimelerdir.
 
-	 ``` 
-	#palidrom.rb
-	print "Enter the sentences: "
-	str = gets.chomp
-	def palidrom?(str)
-	if str.reverse == str
-		return true
-	else
-		return false
-	end
-	puts palidrom?(str)	     
-    ```
+``` 
+#palidrom.rb
+print "Enter the sentences: "
+str = gets.chomp
+def palidrom?(str)
+if str.reverse == str
+return true
+else
+return false
+end
+puts palidrom?(str)	     
+```
 olacaktır.
 
 ##Uygulama - 2
 
 Palidrom cümle: Baştan veya sondan okunuşu aynı olan cümlelerdir.
 
-	 ``` 
-	#palidrom.rb
-	print "Enter the sentences: "
-	str = gets.chomp
-	def palidrom?(str)
-	buyuk_harf=str.downcase
-	kelime_ayır=buyuk_harf.split
-	kelime_birlestir=kelime_ayır.join
-	#ifadesi yerine direk *str1=str.downcase.split.join* denilerekte yapılabilir.
-	if kelime_birlestir == kelime_birlestir.reverse
-		return true
-	else
-		return false
-	end
-	puts palidrom?(str)	     
-	#Traş niçin şart, Ey edip adanada pide ye gibi
-    ```
+``` 
+#palidrom.rb
+print "Enter the sentences: "
+str = gets.chomp
+def palidrom?(str)
+buyuk_harf=str.downcase
+kelime_ayır=buyuk_harf.split
+kelime_birlestir=kelime_ayır.join
+#ifadesi yerine direk *str1=str.downcase.split.join* denilerekte yapılabilir.
+if kelime_birlestir == kelime_birlestir.reverse
+return true
+else
+return false
+end
+puts palidrom?(str)	     
+#Traş niçin şart, Ey edip adanada pide ye gibi
+```
 
 
 seklinde girilen bir cümlenin palidron olup olmadıgını verecektir.
 
 
-- Eger türkçe karakter kullanılacaksa calısılan dizine gidip calıstıgımız dosyanın içine 	 ``` 
-	require 'unicode-utils/upcase'  
-    ``` ifadesi yazılarak bulunabilir.
+- Eger türkçe karakter kullanılacaksa calısılan dizine gidip calıstıgımız dosyanın içine 	 
+
+``` 
+require 'unicode-utils/upcase'  
+``` 
+    
+ifadesi yazılarak bulunabilir.
     
 ##Uygulama - 3
 
 - Kac adet Uygulamasında girilen cümlede aynı olan kelimeleri geri döndüren bir uygulama geliştiriniz.
 
-	 ``` 
-	 puts "Cumleyi girin: "
-	 str1=gets.chomp
-	 puts "Aranacak kelime:"
-	 str2=gets.chomp
-	def kac_adet(str1,str2)
-		str1.downcase.count(str2.downcase)
-	end
-	puts "Cumle: ", kac_adet(str1,str2)  
-    ``` 
+``` 
+puts "Cumleyi girin: "
+str1=gets.chomp
+puts "Aranacak kelime:"
+str2=gets.chomp
+def kac_adet(str1,str2)
+str1.downcase.count(str2.downcase)
+end
+puts "Cumle: ", kac_adet(str1,str2)  
+``` 
     
 seklinde olacaktır.
 
 
 ##Kontrol Yapıları
 
-####if,else, elsif
-	 ``` 
-	if kosul
-	yapılacaklar
-	end    
-     ```
+#### if,else, elsif
+
+``` 
+if kosul
+yapılacaklar
+end    
+```
      
 yukarıda if kosul dogru ise yapılacakların yapılmasını sağlıyor.
 
-Yukarıdaki ifadeyi``` 
-		  if kosul then yapilacak end
-    ``` yazılabilir,  veya
-	 ``` 
-	yapilacak if kosul
-     ``` seklinde de olabilir.
+Yukarıdaki ifadeyi
+``` 
+if kosul then yapilacak end
+``` 
+yazılabilir,  veya
+
+``` 
+yapilacak if kosul
+``` 
+seklinde de olabilir.
      
-	 ``` 
-	if kosul1  
-		...  #kosul1 dogru ise yapılacaklar.
-	elsif kosul2   
-		...   #kosul2 dogru ise yapılacaklar.
-	else
-		...   #yukarıdaki kosullar dogru deilse yapılacaklar
-	end 		
-     ```
+``` 
+if kosul1  
+...  #kosul1 dogru ise yapılacaklar.
+elsif kosul2   
+...   #kosul2 dogru ise yapılacaklar.
+else
+...   #yukarıdaki kosullar dogru deilse yapılacaklar
+end 		
+```
+
 seklinde olacaktır.
 
 ####unless
