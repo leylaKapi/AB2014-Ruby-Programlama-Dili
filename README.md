@@ -1,4 +1,4 @@
-Training_Ruby :ruby: 
+Training_Ruby :gem:
 =============
 
 AB2014 
