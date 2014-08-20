@@ -75,7 +75,7 @@ main classta yazdığımızı gösterir.
 **Ayrıca**
 
 ```bash 
-irb(main):010:0> a="Ruby"
+irb(main):010:0> a = "Ruby"
 => "Ruby"
 irb(main):011:0> a.reverse
 => "ybuR"
@@ -160,7 +160,7 @@ end
 def topla sayi1, sayi2
     sayi1 + sayi2
 end
-puts "Toplam Sonucu: ", topla(3,5)
+puts "Toplam Sonucu: ", topla(3, 5)
 ```
      
      
@@ -182,7 +182,7 @@ sorgulama?    #True veya false değeri döndürür.
 ```
     
 ``` 
-deger_degisikligi = ...   #bir değiskenin degerini değiştirmeye yönelik kullanılır, atama operatördür.
+deger_degisikligi= ...   #bir değiskenin degerini değiştirmeye yönelik kullanılır, atama operatördür.
 ```
     
 ``` 
@@ -191,7 +191,7 @@ tehlikeli!    #ifadesi kullandığımız metnin orjinalini değiştirir.
 
 
 ``` 
-irb(main):001:0> a="Ruby"
+irb(main):001:0> a = "Ruby"
 => "Ruby"
 irb(main):002:0> a.reverse
 => "ybuR"
@@ -215,7 +215,7 @@ Yukarıdaki örnekte girilen a değerinin **!** karakteri kullanılarak orjinali
 class SinifAdi
 ...
 end 
-module ModulAd
+module ModulAdi
 ...
 end
 PI_SABITI = 3,14156
@@ -257,7 +257,7 @@ seklindedir.
 - **Örnek(instance) değişkenleri** '@' ile sınıf değişkenleri '@@' ile başlar.
 
 ```
-@örnek_degisken
+@ornek_degisken
 ```
 
 ```
