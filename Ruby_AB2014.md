@@ -1,4 +1,4 @@
-#AB2014 - Ruby101
+# AB2014 - Ruby101
 - [Ruby-lang](https://ruby-lang.org)
 - [Nitrous](https://nitrous.io)
 
@@ -27,9 +27,9 @@
 
 - **Ruby.philosopy[1] **
 
-Perl'den daha güçlü Phyton'dan daha fazla nesne yönelimli betik bir dildir.
+Perl'den daha güçlü Python'dan daha fazla nesne yönelimli betik bir dildir.
 
-> Perl + Smalltalk + Phyton + Lisp + Ada + ... = Ruby 
+> Perl + Smalltalk + Python + Lisp + Ada + ... = Ruby 
    
 - **Ruby.philosopy[2]**
  
