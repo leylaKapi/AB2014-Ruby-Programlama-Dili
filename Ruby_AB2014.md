@@ -27,9 +27,9 @@
 
 - **Ruby.philosopy[1] **
 
-Perl'den daha güçlü Phyton'dan daha fazla nesne yönelimli betik bir dildir.
+Perl'den daha güçlü Pyhton'dan daha fazla nesne yönelimli betik bir dildir.
 
-> Perl + Smalltalk + Phyton + Lisp + Ada + ... = Ruby 
+> Perl + Smalltalk + Pyhton + Lisp + Ada + ... = Ruby 
    
 - **Ruby.philosopy[2]**
  
